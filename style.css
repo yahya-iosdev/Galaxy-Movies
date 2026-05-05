@@ -212,7 +212,7 @@ color: #ff0000 ;
 }
 
 
-/* --- Auth & Profile Pages Styles --- */
+
 .auth-container { display: flex; justify-content: center; align-items: center; min-height: 70vh; }
 .auth-box { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 100%; max-width: 450px; text-align: center; border: 2px solid #ddd; }
 .mode-b .auth-box { background: #121212; border-color: #333; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
@@ -233,7 +233,7 @@ color: #ff0000 ;
 .auth-links a:hover { color: #cc0000; }
 .mode-b .auth-links p { color: #bbb !important; }
 
-/* Profile Table */
+
 .profile-table { width: 100%; text-align: left; margin-bottom: 20px; border-collapse: separate; border-spacing: 0 15px; }
 .profile-table td { padding: 5px; }
 .profile-table label { font-weight: bold; color: #333; }
@@ -242,7 +242,7 @@ color: #ff0000 ;
 .mode-b .profile-table input { background: #222; border: 1px solid #444; color: #fff; }
 
 
-/* --- Details Page Styles --- */
+
 .details-content { 
     max-width: 900px; 
     margin: 0 auto; 
