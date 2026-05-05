@@ -1,4 +1,4 @@
-// --- Authentication Logic ---
+
 function handleSignup(event) {
     event.preventDefault();
     const name = document.getElementById('username').value;
@@ -40,7 +40,7 @@ function logout() {
     window.location.href = "login.html";
 }
 
-// --- Validation Logic ---
+
 function validateEmail() {
     const emailInput = document.getElementById('email') || document.getElementById('loginEmail');
     const emailError = document.getElementById('emailError');
@@ -74,7 +74,7 @@ function validateName() {
     }
 }
 
-// --- Theme Logic ---
+
 function setModeA() {
     document.body.className = "mode-a";
     document.cookie = "app_style=mode-a; path=/; max-age=2592000";
