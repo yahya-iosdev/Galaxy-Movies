@@ -26,18 +26,17 @@ window.onload = function() {
         setModeB(); 
     }
 };
-// Add this to script.js and genrescript.js
+
 function addToWatchlist(movieCode) {
-    // 1. Open the notebook (get existing saved movies)
-    // If the notebook is empty, create a new blank array []
+    
     var savedIds = JSON.parse(localStorage.getItem('galaxy_watchlist')) || [];
 
-    // 2. Check if the movie is already in the notebook
+ 
     if (!savedIds.includes(movieCode)) {
-        // 3. If it's not there, write it down
+        
         savedIds.push(movieCode);
         
-        // 4. Save the updated notebook back to the browser
+       
         localStorage.setItem('galaxy_watchlist', JSON.stringify(savedIds));
         
         alert("Added to Watchlist!");
