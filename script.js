@@ -36,7 +36,7 @@ function render() {
         var btnBg = isAdded ? "#28a745" : "#f1c40f"; 
         var btnColor = isAdded ? "#fff" : "#333";
 
-        // Added <a> tag around the image and h4!
+    
         var itemHTML = '<div class="m-item">' +
                        '<a href="details.html?id=' + obj.code + '" style="text-decoration:none; color:inherit; display:block;">' +
                            '<img src="' + obj.src + '">' +
@@ -98,7 +98,7 @@ document.getElementById('movieSearch').addEventListener('input', function(e) {
 
 
 
-// Notice it now accepts two parameters: the movieCode and the btnElement
+
 function addToWatchlist(movieCode, btnElement) {
     var savedIds = JSON.parse(localStorage.getItem('galaxy_watchlist')) || [];
 
