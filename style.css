@@ -301,3 +301,62 @@ color: #ff0000 ;
     transition: 0.3s; 
 }
 .btn-back:hover { background: #ff0000; }
+
+
+
+.mode-b nav {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 20px;
+    text-align: center;
+}
+.mode-b .nav-left {
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+
+.mode-b .movies-container {
+    flex-direction: column;
+}
+
+.mode-b .m-item {
+    display: flex;
+    flex-direction: row; 
+    width: 90%;
+    max-width: 800px;
+    height: 180px;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 25px;
+    box-sizing: border-box;
+}
+
+
+.mode-b .m-item img {
+    width: 130px;
+    height: 100%;
+    border-radius: 13px 0 0 13px;
+}
+
+
+.mode-b .m-item a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+    width: 50%;
+}
+
+.mode-b .m-item h4 {
+    font-size: 1.4rem;
+}
+
+
+.mode-b .m-item button {
+    width: 160px;
+    margin: 0; 
+}
