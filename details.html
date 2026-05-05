@@ -10,7 +10,7 @@
 </head>
 <body id="app-body" class="mode-a">
     
-    <!-- Standard GALAXY Navbar -->
+    
     <nav>
         <div class="nav-left">
             <div class="site-logo"><span>GALAXY</span></div>
@@ -22,7 +22,7 @@
             </ul>
         </div>
         <div class="actions">
-            <!-- Hidden search to keep flex spacing -->
+           
             <div class="search-box" style="visibility: hidden;"><input type="text"></div>
             <button onclick="setModeA()" title="Light Mode"><i class="fas fa-sun"></i></button>
             <button onclick="setModeB()" title="Dark Mode"><i class="fas fa-moon"></i></button>
@@ -36,7 +36,7 @@
             <h1 id="movieTitle">Loading Movie...</h1>
             
             <div class="video-container" id="videoWrapper">
-                <!-- Trailer injected here -->
+               
             </div>
 
             <div class="movie-info-text">
@@ -48,7 +48,7 @@
     </div>
 
     <script>
-        // Theme Logic
+       
         function setModeA() {
             document.body.className = "mode-a";
             document.cookie = "app_style=mode-a; path=/; max-age=2592000";
@@ -58,7 +58,7 @@
             document.cookie = "app_style=mode-b; path=/; max-age=2592000";
         }
 
-        // Expanded Data for your 20 Movies
+     
         const moviesData = {
             1: { title: "The Shawshank Redemption", year: 1994, story: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.", video: "https://www.youtube.com/embed/6hB3S9bIaco", meta: "Genre: Drama | Rating: ⭐ 9.3" },
             2: { title: "The Godfather", year: 1972, story: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.", video: "https://www.youtube.com/embed/UaVTIH8mujA", meta: "Genre: Crime, Drama | Rating: ⭐ 9.2" },
@@ -83,7 +83,7 @@
         };
 
         window.onload = function() {
-            // 1. Load Theme
+           
             var allCookies = document.cookie.split(';');
             var styleFound = false;
             for(var k=0; k < allCookies.length; k++) {
@@ -96,7 +96,7 @@
             }
             if (!styleFound) setModeB(); 
 
-            // 2. Load Movie based on the URL (e.g., details.html?id=5)
+           
             const urlParams = new URLSearchParams(window.location.search);
             const movieId = parseInt(urlParams.get('id'));
             
