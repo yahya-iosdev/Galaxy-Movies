@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GALAXY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+</head>
+<body id="app-body" class="mode-a">
+    
+    <!-- Standard GALAXY Navbar -->
+    <nav>
+        <div class="nav-left">
+            <div class="site-logo"><span>GALAXY</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="genre.html">GENRE</a></li>
+                <li><a href="watchlist.html">WATCHLIST</a></li>
+                <li><a href="compare.html">COMPARE</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="profile.html">PROFILE</a></li>
+                <!-- Active class on Contact -->
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="actions">
+            <!-- Hidden search box to keep consistent spacing -->
+            <div class="search-box" style="visibility: hidden;"><input type="text"></div>
+            <button onclick="setModeA()" title="Light Mode"><i class="fas fa-sun"></i></button>
+            <button onclick="setModeB()" title="Dark Mode"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <div class="wrapper contact-wrapper">
+        <div class="contact-card">
+            <h2>Contact Us / Review</h2>
+            <p>We value your feedback. Let us know your thoughts about GALAXY Cinema!</p>
+            
+            <textarea id="feedback" placeholder="Write your review or feedback here..."></textarea>
+            
+            <button class="btn-main" onclick="submitFeedback()">Submit Review</button>
+
+            <!-- Account Management -->
+            <div class="danger-zone">
+                <p>Account Management</p>
+                <button class="btn-logout" onclick="logout()">Logout Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Logic & Submission Script -->
+    <script src="auth.js"></script> <!-- Link to auth.js so the logout() function works -->
+    <script>
+        // Feedback Submission Logic
+        function submitFeedback() {
+            const text = document.getElementById('feedback').value.trim();
+            if(text) {
+                alert("Thank you for your feedback! Your review has been submitted.");
+                document.getElementById('feedback').value = ""; // Clear the text area
+            } else {
+                alert("Please write something first.");
+            }
+        }
+
+        // Theme Handling
+        function setModeA() {
+            document.body.className = "mode-a";
+            document.cookie = "app_style=mode-a; path=/; max-age=2592000";
+        }
+        function setModeB() {
+            document.body.className = "mode-b";
+            document.cookie = "app_style=mode-b; path=/; max-age=2592000";
+        }
+
+        window.onload = function() {
+            var allCookies = document.cookie.split(';');
+            var styleFound = false;
+            for(var k=0; k < allCookies.length; k++) {
+                var pair = allCookies[k].trim();
+                if (pair.indexOf("app_style=") == 0) {
+                    document.body.className = pair.substring(10, pair.length);
+                    styleFound = true;
+                    break;
+                }
+            }
+            if (!styleFound) setModeB(); 
+        };
+    </script>
+    
+</body>
+</html>
