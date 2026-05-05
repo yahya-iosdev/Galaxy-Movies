@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details - GALAXY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+</head>
+<body id="app-body" class="mode-a">
+    
+    <!-- Standard GALAXY Navbar -->
+    <nav>
+        <div class="nav-left">
+            <div class="site-logo"><span>GALAXY</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="genre.html">GENRE</a></li>
+                <li><a href="watchlist.html">WATCHLIST</a></li>
+                <li><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </div>
+        <div class="actions">
+            <!-- Hidden search to keep flex spacing -->
+            <div class="search-box" style="visibility: hidden;"><input type="text"></div>
+            <button onclick="setModeA()" title="Light Mode"><i class="fas fa-sun"></i></button>
+            <button onclick="setModeB()" title="Dark Mode"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <a href="index.html" class="btn-back">← Back to Movies</a>
+        
+        <div class="details-content">
+            <h1 id="movieTitle">Loading Movie...</h1>
+            
+            <div class="video-container" id="videoWrapper">
+                <!-- Trailer injected here -->
+            </div>
+
+            <div class="movie-info-text">
+                <h3 style="margin-bottom: 10px; font-size: 1.5rem;">Storyline</h3>
+                <p class="movie-story" id="movieStory">Please select a movie from the home page.</p>
+                <div class="movie-meta" id="movieMeta"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Logic
+        function setModeA() {
+            document.body.className = "mode-a";
+            document.cookie = "app_style=mode-a; path=/; max-age=2592000";
+        }
+        function setModeB() {
+            document.body.className = "mode-b";
+            document.cookie = "app_style=mode-b; path=/; max-age=2592000";
+        }
+
+        // Expanded Data for your 20 Movies
+        const moviesData = {
+            1: { title: "The Shawshank Redemption", year: 1994, story: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.", video: "https://www.youtube.com/embed/6hB3S9bIaco", meta: "Genre: Drama | Rating: ⭐ 9.3" },
+            2: { title: "The Godfather", year: 1972, story: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.", video: "https://www.youtube.com/embed/UaVTIH8mujA", meta: "Genre: Crime, Drama | Rating: ⭐ 9.2" },
+            3: { title: "The Dark Knight", year: 2008, story: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.", video: "https://www.youtube.com/embed/EXeTwQWrcwY", meta: "Genre: Action, Crime | Rating: ⭐ 9.0" },
+            4: { title: "Schindler's List", year: 1993, story: "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.", video: "https://www.youtube.com/embed/gG22XNhtnoY", meta: "Genre: Biography, Drama | Rating: ⭐ 9.0" },
+            5: { title: "Pulp Fiction", year: 1994, story: "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.", video: "https://www.youtube.com/embed/s7EdQ4FqbhY", meta: "Genre: Crime, Drama | Rating: ⭐ 8.9" },
+            6: { title: "Inception", year: 2010, story: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.", video: "https://www.youtube.com/embed/YoHD9XEInc0", meta: "Genre: Action, Sci-Fi | Rating: ⭐ 8.8" },
+            7: { title: "Fight Club", year: 1999, story: "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.", video: "https://www.youtube.com/embed/qtRKdVHc-cE", meta: "Genre: Drama | Rating: ⭐ 8.8" },
+            8: { title: "Forrest Gump", year: 1994, story: "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75.", video: "https://www.youtube.com/embed/bLvqoHBptjg", meta: "Genre: Drama, Romance | Rating: ⭐ 8.8" },
+            9: { title: "The Matrix", year: 1999, story: "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.", video: "https://www.youtube.com/embed/vKQi3bBA1y8", meta: "Genre: Action, Sci-Fi | Rating: ⭐ 8.7" },
+            10: { title: "Goodfellas", year: 1990, story: "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito.", video: "https://www.youtube.com/embed/2ilzidi_J8Q", meta: "Genre: Biography, Crime | Rating: ⭐ 8.7" },
+            11: { title: "Seven", year: 1995, story: "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.", video: "https://www.youtube.com/embed/znmZoVkCjpI", meta: "Genre: Crime, Drama | Rating: ⭐ 8.6" },
+            12: { title: "Interstellar", year: 2014, story: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.", video: "https://www.youtube.com/embed/zSWdZVtXT7E", meta: "Genre: Adventure, Sci-Fi | Rating: ⭐ 8.6" },
+            13: { title: "Parasite", year: 2019, story: "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.", video: "https://www.youtube.com/embed/5xH0HfJHsaY", meta: "Genre: Comedy, Thriller | Rating: ⭐ 8.5" },
+            14: { title: "The Prestige", year: 2006, story: "After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.", video: "https://www.youtube.com/embed/RLtaA9fFNXU", meta: "Genre: Drama, Mystery | Rating: ⭐ 8.5" },
+            15: { title: "Gladiator", year: 2000, story: "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.", video: "https://www.youtube.com/embed/owK1qxDselE", meta: "Genre: Action, Drama | Rating: ⭐ 8.5" },
+            16: { title: "The Lion King", year: 1994, story: "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.", video: "https://www.youtube.com/embed/7TavVZMewpY", meta: "Genre: Animation, Adventure | Rating: ⭐ 8.5" },
+            17: { title: "Back to the Future", year: 1985, story: "Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend.", video: "https://www.youtube.com/embed/qvsgGtivCgs", meta: "Genre: Adventure, Comedy | Rating: ⭐ 8.5" },
+            18: { title: "The Green Mile", year: 1999, story: "The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.", video: "https://www.youtube.com/embed/Ki4haFrqSrw", meta: "Genre: Crime, Drama | Rating: ⭐ 8.6" },
+            19: { title: "Saving Private Ryan", year: 1998, story: "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.", video: "https://www.youtube.com/embed/9CiW_DgxCnQ", meta: "Genre: Drama, War | Rating: ⭐ 8.6" },
+            20: { title: "The Pianist", year: 2002, story: "A Polish Jewish musician struggles to survive the destruction of the Warsaw ghetto of World War II.", video: "https://www.youtube.com/embed/BFwGqLa_oAo", meta: "Genre: Biography, Drama | Rating: ⭐ 8.5" }
+        };
+
+        window.onload = function() {
+            // 1. Load Theme
+            var allCookies = document.cookie.split(';');
+            var styleFound = false;
+            for(var k=0; k < allCookies.length; k++) {
+                var pair = allCookies[k].trim();
+                if (pair.indexOf("app_style=") == 0) {
+                    document.body.className = pair.substring(10, pair.length);
+                    styleFound = true;
+                    break;
+                }
+            }
+            if (!styleFound) setModeB(); 
+
+            // 2. Load Movie based on the URL (e.g., details.html?id=5)
+            const urlParams = new URLSearchParams(window.location.search);
+            const movieId = parseInt(urlParams.get('id'));
+            
+            const movie = moviesData[movieId];
+
+            if (movie) {
+                document.getElementById('movieTitle').innerText = movie.title + " (" + movie.year + ")";
+                document.getElementById('movieStory').innerText = movie.story;
+                document.getElementById('movieMeta').innerText = movie.meta;
+                document.getElementById('videoWrapper').innerHTML = `
+                    <iframe width="100%" height="500" src="${movie.video}" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>`;
+            } else {
+                document.getElementById('movieTitle').innerText = "Movie Not Found";
+                document.getElementById('movieStory').innerText = "Please return to the Home page and click on a valid movie.";
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Genre</title>
+    <link rel="stylesheet" href="genrestyle.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+</head>
+<body id="app-body">
+    <nav>
+    <div class="nav-left">
+        <div class="site-logo"><span>GALAXY</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">HOME</a></li>
+			<li><a href="genre.html">GENRE</a></li>
+			<li><a href="watchlist.html">Watch list</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="profile.html">PROFILE</a></li>
+        </ul>
+    </div>
+    <div class="actions">
+		<div class="search-box">
+			<input type="text" placeholder="Search movies..." id="movieSearch">
+			<i class="fas fa-search"></i>
+		</div>
+        <button onclick="setModeA()" title="Light Mode"><i class="fas fa-sun"></i></button>
+        <button onclick="setModeB()" title="Dark Mode"><i class="fas fa-moon"></i></button>
+    </div>
+</nav>
+	<div class="wrapper">
+	
+    <div class="genre-group">
+        <h2 class="main-heading">Action</h2>
+        <div id="action-area" class="movies-container">
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/agKJFDTCiPbzh4Otb1KVAoikZaG.jpg" alt="Saving Private Ryan">
+			<h4>Saving Private Ryan</h4>
+			<p>1998</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg" alt="The Matrix">
+			<h4>The Matrix</h4>
+			<p>1999</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg" alt="Fight Club">
+			<h4>Fight Club</h4>
+			<p>1999</p>
+		</div>
+		
+		
+        <div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/vGYJRor3pCyjbaCpJKC39MpJhIT.jpg" alt="The Dark Knight">
+			<h4>The Dark Knight</h4>
+			<p>2008</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg" alt="Inception">
+			<h4>Inception</h4>
+			<p>2010</p>
+		</div>
+		
+        </div>
+    </div>
+
+    <div class="genre-group">
+        <h2 class="main-heading">Drama</h2>
+        <div id="drama-area" class="movies-container">
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/o0lO84GI7qrG6XFvtsPOSV7CTNa.jpg" alt="The Green Mile">
+			<h4>The Green Mile</h4>
+			<p>1999</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/2hFvxCCWrTmCYwfy7yum0GKRi3Y.jpg" alt="The Pianist">
+			<h4>The Pianist</h4>
+			<p>2002</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/nrSaXF39nDfAAeLKksRCyvSzI2a.jpg" alt="Interstellar">
+			<h4>Interstellar</h4>
+			<p>2014</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg" alt="Schindler's List">
+			<h4>Schindler's List</h4>
+			<p>1993</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="Parasite">
+			<h4>Parasite</h4>
+			<p>2019</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg" alt="The Lion King">
+			<h4>The Lion King</h4>
+			<p>1994</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/3Tf8vXykYhzHdT0BtsYTp570JGQ.jpg" alt="The Godfather">
+			<h4>The Godfather</h4>
+			<p>1972</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg" alt="The Shawshank Redemption">
+			<h4>The Shawshank Redemption</h4>
+			<p>1994</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/9OkCLM73MIU2CrKZbqiT8Ln1wY2.jpg" alt="Goodfellas">
+			<h4>Goodfellas</h4>
+			<p>1990</p>
+		</div>
+		</div>
+    </div>
+
+    <div class="genre-group">
+        <h2 class="main-heading">Crime</h2>
+        <div id="crime-area" class="movies-container">
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/9OkCLM73MIU2CrKZbqiT8Ln1wY2.jpg" alt="Goodfellas">
+			<h4>Goodfellas</h4>
+			<p>1990</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg" alt="The Shawshank Redemption">
+			<h4>The Shawshank Redemption</h4>
+			<p>1994</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/vGYJRor3pCyjbaCpJKC39MpJhIT.jpg" alt="The Dark Knight">
+			<h4>The Dark Knight</h4>
+			<p>2008</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/yEbjPcq6VoWSG9KRWqzIbOxoy6W.jpg" alt="Seven">
+			<h4>Seven</h4>
+			<p>1995</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/3Tf8vXykYhzHdT0BtsYTp570JGQ.jpg" alt="The Godfather">
+			<h4>The Godfather</h4>
+			<p>1972</p>
+		</div>
+		</div>
+    </div>
+
+    <div class="genre-group">
+        <h2 class="main-heading">Sci-Fi</h2>
+        <div id="scifi-area" class="movies-container">
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/nrSaXF39nDfAAeLKksRCyvSzI2a.jpg" alt="Interstellar">
+			<h4>Interstellar</h4>
+			<p>2014</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg" alt="The Matrix">
+			<h4>The Matrix</h4>
+			<p>1999</p>
+		</div>
+		
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg" alt="Inception">
+			<h4>Inception</h4>
+			<p>2010</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg" alt="The Lion King">
+			<h4>The Lion King</h4>
+			<p>1994</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/vN5B5WgYscRGcQpVhHl6p9DDTP0.jpg" alt="Back to the Future">
+			<h4>Back to the Future</h4>
+			<p>1985</p>
+		</div>
+		</div>
+    </div>
+
+	<div class="genre-group">
+		<h2 class="main-heading">History</h2>
+		<div id="History-area" class="movies-container"> 
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/agKJFDTCiPbzh4Otb1KVAoikZaG.jpg" alt="Saving Private Ryan">
+			<h4>Saving Private Ryan</h4>
+			<p>1998</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/wN2xWp1eIwCKOD0BHTcErTBv1Uq.jpg" alt="Gladiator">
+			<h4>Gladiator</h4>
+			<p>2000</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg" alt="Schindler's List">
+			<h4>Schindler's List</h4>
+			<p>1993</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/3Tf8vXykYhzHdT0BtsYTp570JGQ.jpg" alt="The Godfather">
+			<h4>The Godfather</h4>
+			<p>1972</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/yu26pJwGFUyqTJWMWo1mMgBFJ0N.jpg" alt="Forrest Gump">
+			<h4>Forrest Gump</h4>
+			<p>1994</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/2hFvxCCWrTmCYwfy7yum0GKRi3Y.jpg" alt="The Pianist">
+			<h4>The Pianist</h4>
+			<p>2002</p>
+		</div>
+		</div>
+	</div>
+	
+	<div class="genre-group">
+		<h2 class="main-heading">Romance</h2>
+		<div id="Romance-area" class="movies-container">
+	
+	
+	<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/yu26pJwGFUyqTJWMWo1mMgBFJ0N.jpg" alt="Forrest Gump">
+			<h4>Forrest Gump</h4>
+			<p>1994</p>
+		</div>
+	</div>
+	</div>
+	<div class="genre-group">
+		<h2 class="main-heading">Mystery</h2>
+		<div id="Mystery-area" class="movies-container"> 
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/Ag2B2KHKQPukjH7WutmgnnSNurZ.jpg" alt="The Prestige">
+			<h4>The Prestige</h4>
+			<p>2006</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg" alt="Fight Club">
+			<h4>Fight Club</h4>
+			<p>1999</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg" alt="Pulp Fiction">
+			<h4>Pulp Fiction</h4>
+			<p>1994</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg" alt="The Shawshank Redemption">
+			<h4>The Shawshank Redemption</h4>
+			<p>1994</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="Parasite">
+			<h4>Parasite</h4>
+			<p>2019</p>
+		</div>
+		
+		<div class="m-item">
+			<img src="https://image.tmdb.org/t/p/original/yEbjPcq6VoWSG9KRWqzIbOxoy6W.jpg" alt="Seven">
+			<h4>Seven</h4>
+			<p>1995</p>
+		</div>
+		</div>
+	</div>
+	
+	</div>	
+</div>
+   
+
+    <script src="genrescript.js"></script>
+</body>
+</html>

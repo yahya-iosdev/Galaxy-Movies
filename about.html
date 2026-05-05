@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GALAXY</title>
+    
+    <!-- Link to the main GALAXY stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Alfa Slab One for Logo, Tajawal for Arabic Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- About Page Specific Styles --- */
+        .about-wrapper {
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl; /* Keeps Arabic text right-to-left */
+        }
+
+        .hero-about { text-align: center; padding: 40px 0; }
+        .hero-about h1 { font-size: 3rem; color: #ff0000; margin-bottom: 15px; font-weight: 800; }
+        .hero-about p { font-size: 1.3rem; color: #666; max-width: 750px; margin: 0 auto; line-height: 1.6; }
+        .mode-b .hero-about p { color: #bbb; }
+
+        .mission-vision { display: flex; flex-wrap: wrap; gap: 30px; margin: 40px 0; }
+        .card { flex: 1; background: #fff; border: 2px solid #ddd; border-radius: 15px; padding: 30px; text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: #ff0000; }
+        .card i { font-size: 3rem; color: #ff0000; margin-bottom: 15px; }
+        .card h3 { font-size: 1.8rem; margin-bottom: 10px; color: #222; }
+        .card p { color: #666; }
+
+        .stats { display: flex; flex-wrap: wrap; justify-content: space-around; background: #f9f9f9; border: 2px solid #ddd; border-radius: 20px; padding: 35px 20px; margin: 50px 0; text-align: center; gap: 30px; }
+        .stat-item h4 { font-size: 2.2rem; font-weight: 800; color: #ff0000; }
+        .stat-item p { color: #444; font-weight: bold; font-size: 1.1rem; }
+
+        .team-section { margin: 70px 0; }
+        .section-title { text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 45px; color: #222; }
+        .section-title:after { content: ''; width: 80px; height: 4px; background: #ff0000; display: block; margin: 12px auto 0; border-radius: 5px; }
+        
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .team-member { background: #fff; border: 2px solid #ddd; border-radius: 15px; padding: 30px 20px; text-align: center; transition: 0.3s; }
+        .team-member:hover { transform: translateY(-5px); border-color: #ff0000; box-shadow: 0 10px 20px rgba(255,0,0,0.1); }
+        .member-initial { width: 90px; height: 90px; background: #ff0000; color: white; border-radius: 50%; font-size: 2.5rem; line-height: 90px; margin: 0 auto 15px; font-weight: bold; }
+        .team-member h3 { font-size: 1.5rem; margin-bottom: 5px; color: #222; }
+        .role { color: #ff0000; font-weight: bold; margin-bottom: 10px; }
+        .bio { font-size: 0.95rem; color: #666; line-height: 1.5; }
+        
+        .social-icons { margin-top: 15px; }
+        .social-icons a { color: #888; margin: 0 5px; font-size: 1.2rem; text-decoration: none; transition: 0.2s; }
+        .social-icons a:hover { color: #ff0000; }
+
+        /* --- Dark Mode Overrides (.mode-b) --- */
+        .mode-b .card { background: #121212; border-color: #333; }
+        .mode-b .card h3 { color: #fff; }
+        .mode-b .card p { color: #bbb; }
+        .mode-b .stats { background: #121212; border-color: #333; }
+        .mode-b .stat-item p { color: #ddd; }
+        .mode-b .section-title { color: #fff; }
+        .mode-b .team-member { background: #121212; border-color: #333; }
+        .mode-b .team-member h3 { color: #fff; }
+        .mode-b .bio { color: #bbb; }
+    </style>
+</head>
+<body id="app-body" class="mode-a">
+
+    <!-- GALAXY Standard Navbar -->
+    <nav>
+        <div class="nav-left">
+            <div class="site-logo"><span>GALAXY</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="genre.html">GENRE</a></li>
+                <li><a href="watchlist.html">WATCHLIST</a></li>
+                <li><a href="about.html" class="active">ABOUT US</a></li>
+                <li><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </div>
+        <div class="actions">
+            <!-- Hidden search bar to keep spacing consistent with other pages -->
+            <div class="search-box" style="visibility: hidden;">
+                <input type="text">
+            </div>
+            <button onclick="setModeA()" title="Light Mode"><i class="fas fa-sun"></i></button>
+            <button onclick="setModeB()" title="Dark Mode"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="about-wrapper">
+            
+            <div class="hero-about">
+                <h1>🎥 من نحن؟</h1>
+                <p>منصة سينما بلس هي وجهتك المثالية لاكتشاف الأفلام والمسلسلات، نقدم محتوى غني وتقييمات دقيقة.</p>
+            </div>
+
+            <div class="mission-vision">
+                <div class="card"><i class="fas fa-eye"></i><h3>رؤيتنا</h3><p>نطمح أن نكون أكبر مجتمع عربي للسينما، نلهم عشاق الدراما ونقدم تجربة استثنائية.</p></div>
+                <div class="card"><i class="fas fa-bullseye"></i><h3>مهمتنا</h3><p>تبسيط الوصول لمعلومات دقيقة عن آلاف الأفلام والمسلسلات مع توصيات ذكية.</p></div>
+                <div class="card"><i class="fas fa-heart"></i><h3>قيمنا</h3><p>الإبداع، المصداقية، والشغف بالسينما. نعمل كفريق واحد لنمنحك أفضل تجربة.</p></div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item"><h4>+5,200</h4><p>فيلم ومسلسل</p></div>
+                <div class="stat-item"><h4>+125K</h4><p>مستخدم نشط</p></div>
+                <div class="stat-item"><h4>+30</h4><p>تقييم يومياً</p></div>
+                <div class="stat-item"><h4>2025</h4><p>انطلاقة قوية</p></div>
+            </div>
+
+            <div class="team-section">
+                <div class="section-title">👥 فريق العمل</div>
+                <div class="team-grid">
+                    <div class="team-member"><div class="member-initial">م</div><h3>مصطفى إبراهيم</h3><div class="role">مؤسس ومدير تنفيذي</div><p class="bio">شغوف بالسينما والتكنولوجيا، يقود رؤية المنصة نحو التميز.</p><div class="social-icons"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div>
+                    <div class="team-member"><div class="member-initial">ن</div><h3>نور الدين عمار</h3><div class="role">مطور واجهات رئيسي</div><p class="bio">يحول الأفكار إلى تجارب بصرية ساحرة وتفاعلية.</p><div class="social-icons"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
+                    <div class="team-member"><div class="member-initial">س</div><h3>سيف الدين محمد</h3><div class="role">مهندس خوادم وقواعد بيانات</div><p class="bio">يضمن سرعة وأمان المنصة وأداء فائق.</p><div class="social-icons"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div>
+                    <div class="team-member"><div class="member-initial">أ</div><h3>أحمد محمد</h3><div class="role">مسؤول محتوى وناقد سينمائي</div><p class="bio">يكتب مراجعات عميقة ويختار أفضل التوصيات.</p><div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook"></i></a></div></div>
+                    <div class="team-member"><div class="member-initial">ي</div><h3>يحي علاء</h3><div class="role">مصمم تجربة مستخدم UI/UX</div><p class="bio">يصمم واجهات سهلة وجذابة تناسب كل المستخدمين.</p><div class="social-icons"><a href="#"><i class="fab fa-behance"></i></a><a href="#"><i class="fab fa-dribbble"></i></a></div></div>
+                    <div class="team-member"><div class="member-initial">ه</div><h3>هاشم عمر</h3><div class="role">مدير تسويق وعلاقات عامة</div><p class="bio">يبني مجتمع عشاق السينما وينشر ثقافة المنصة.</p><div class="social-icons"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+                    <div class="team-member"><div class="member-initial">ص</div><h3>صادق خطاب</h3><div class="role">أخصائي أمن معلومات</div><p class="bio">يحمي بيانات المستخدمين ويضمن بيئة رقمية آمنة للمنصة.</p><div class="social-icons"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-github"></i></a></div></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- GALAXY Theme Logic -->
+    <script>
+        function setModeA() {
+            document.body.className = "mode-a";
+            document.cookie = "app_style=mode-a; path=/; max-age=2592000";
+        }
+
+        function setModeB() {
+            document.body.className = "mode-b";
+            document.cookie = "app_style=mode-b; path=/; max-age=2592000";
+        }
+
+        window.onload = function() {
+            var allCookies = document.cookie.split(';');
+            var styleFound = false;
+
+            for(var k=0; k < allCookies.length; k++) {
+                var pair = allCookies[k].trim();
+                if (pair.indexOf("app_style=") == 0) {
+                    var val = pair.substring(10, pair.length);
+                    document.body.className = val;
+                    styleFound = true;
+                    break;
+                }
+            }
+
+            if (!styleFound) {
+                setModeB(); 
+            }
+        };
+    </script>
+</body>
+</html>

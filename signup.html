@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - GALAXY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+</head>
+<body id="app-body" class="mode-a">
+    
+    <nav>
+        <div class="nav-left">
+            <div class="site-logo"><span>GALAXY</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="genre.html">GENRE</a></li>
+                <li><a href="watchlist.html">WATCHLIST</a></li>
+                <li><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </div>
+        <div class="actions">
+            <button onclick="setModeA()" title="Light Mode"><i class="fas fa-sun"></i></button>
+            <button onclick="setModeB()" title="Dark Mode"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <div class="wrapper auth-container">
+        <div class="auth-box">
+            <h2>Create Account</h2>
+            <form onsubmit="handleSignup(event)">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Full Name" required oninput="validateName()">
+                    <span id="nameError" style="color: red; font-size: 0.8rem; display: block; margin-top: 5px;"></span>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required oninput="validateEmail()">
+                    <span id="emailError" style="color: red; font-size: 0.8rem; display: block; margin-top: 5px;"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password (min 8)" required minlength="8" oninput="validatePass()">
+                    <span id="passError" style="color: red; font-size: 0.8rem; display: block; margin-top: 5px;"></span>
+                </div>
+                <button class="btn-main" type="submit">Register Now</button>
+            </form>
+
+            <div class="auth-links">
+                <p style="color: #888; font-size: 0.9rem; margin-bottom: 10px;">Already have an account?</p>
+                <a href="login.html">Login here</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

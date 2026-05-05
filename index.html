@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Library</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+</head>
+<body id="app-body">
+    <nav>
+    <div class="nav-left">
+        <div class="site-logo"><span>GALAXY</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">HOME</a></li>
+			<li><a href="genre.html">GENRE</a></li>
+            <li><a href="watchlist.html">Watch list</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="profile.html">PROFILE</a></li>
+        </ul>
+    </div>
+    <div class="actions">
+	<div class="search-box">
+        <input type="text" placeholder="Search movies..." id="movieSearch">
+        <i class="fas fa-search"></i>
+    </div>
+	
+        <button onclick="setModeA()" title="Light Mode"><i class="fas fa-sun"></i></button>
+        <button onclick="setModeB()" title="Dark Mode"><i class="fas fa-moon"></i></button>
+    </div>
+</nav>
+
+    <div class="wrapper">
+        <h2 id="main-heading">Top  Movies</h2>
+        <div id="display-area" class="movies-container"></div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
