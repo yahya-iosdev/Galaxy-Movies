@@ -317,9 +317,9 @@ color: #ff0000 ;
 }
 
 
-
 .mode-b .movies-container {
-    flex-direction: column;
+    flex-direction: column; 
+    align-items: center;
 }
 
 .mode-b .m-item {
@@ -327,23 +327,26 @@ color: #ff0000 ;
     flex-direction: row; 
     width: 90%;
     max-width: 800px;
-    height: 180px;
+    height: auto; 
+    min-height: 180px;
     align-items: center;
     justify-content: space-between;
     padding-right: 25px;
     box-sizing: border-box;
+    overflow: hidden; 
 }
 
 
 .mode-b .m-item img {
     width: 130px;
-    height: 100%;
+    height: 180px; 
+    object-fit: cover;
     border-radius: 13px 0 0 13px;
 }
 
 
 .mode-b .m-item a {
-    display: flex;
+    display: flex !important; 
     flex-direction: row;
     align-items: center;
     text-align: left;
@@ -353,6 +356,7 @@ color: #ff0000 ;
 
 .mode-b .m-item h4 {
     font-size: 1.4rem;
+    line-height: 1.3;
 }
 
 
@@ -360,3 +364,4 @@ color: #ff0000 ;
     width: 160px;
     margin: 0; 
 }
+
