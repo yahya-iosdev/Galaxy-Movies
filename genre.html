@@ -2,34 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Movie Genre</title>
-    <link rel="stylesheet" href="genrestyle.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Movie Genre - GALAXY</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 </head>
-<body id="app-body">
+
+<body id="app-body" class="mode-a">
+    
+ 
     <nav>
-    <div class="nav-left">
-        <div class="site-logo"><span>GALAXY</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-			<li><a href="genre.html" class = "active">GENRE</a></li>
-			<li><a href="watchlist.html">Watch list</a></li>
-			<li><a href="about.html">About Us</a></li>
-			<li><a href="contact.html">CONTACT</a></li>
-			<li><a href="profile.html">PROFILE</a></li>
-        </ul>
-    </div>
-    <div class="actions">
-		<div class="search-box">
-			<input type="text" placeholder="Search movies..." id="movieSearch">
-			<i class="fas fa-search"></i>
-		</div>
-        <button onclick="setModeA()" title="Light Mode"><i class="fas fa-sun"></i></button>
-        <button onclick="setModeB()" title="Dark Mode"><i class="fas fa-moon"></i></button>
-    </div>
-</nav>
-	<div class="wrapper">
+        <div class="nav-left">
+            <div class="site-logo"><span>GALAXY</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="genre.html" class="active">GENRE</a></li>
+                <li><a href="watchlist.html">WATCHLIST</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+				 <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </div>
+        <div class="actions">
+            <div class="search-box">
+                <input type="text" placeholder="Search movies..." id="movieSearch">
+                <i class="fas fa-search"></i>
+            </div>
+            <button onclick="setModeA()" title="Light Mode"><i class="fas fa-sun"></i></button>
+            <button onclick="setModeB()" title="Dark Mode"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <div class="wrapper">
 	
     <div class="genre-group">
         <h2 class="main-heading">Action</h2>
